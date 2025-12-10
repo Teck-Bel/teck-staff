@@ -1,1 +1,488 @@
+/* ===== Basisstijl ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #195797;
+  margin: 0;
+  padding: 20px; 
+  color: white; /* juist maken: #white bestaat niet */
+}
 
+/* ===== Headers ===== */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px ;
+  color: #ffffff; 
+}
+
+/* ===== Navigatie (TOP-NAV IN DE HEADER met dropdown) ===== */
+.site-header {
+  display: flex;
+  align-items: flex-start; /* boven uitlijnen, zodat titel boven knoppen komt */
+  gap: 20px;
+  padding: 20px;
+  background-color: #003366; 
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 100px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Container met titel en menu (kolom) */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+/* Titel boven menu */
+.site-title {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* Navigatieknoppen - lijst horizontaal */
+.top-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* links uitlijnen */
+}
+
+/* Individuele menu-items */
+.top-nav li {
+  position: relative;
+}
+
+/* Knoppen stijl */
+.nav-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #1565c0;
+}
+
+/* Dropdown-menu (eerste niveau) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #003366;
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #004080;
+}
+
+/* Toon dropdown bij hover */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* ===== Nested dropdown (dropdown in dropdown) ===== */
+/* submenu container */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > a::after {
+  content: " ▶";
+  float: right;
+}
+
+/* submenu inhoud */
+.dropdown-content-sub {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #003366;
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 140px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-submenu:hover > .dropdown-content-sub {
+  display: block;
+}
+
+.dropdown-content-sub li {
+  display: block;
+}
+
+.dropdown-content-sub a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-content-sub a:hover {
+  background-color: #004080;
+}
+
+/* ===== Tekst en paragrafen ===== */
+.overzicht-paragraaf {
+  color: #8bb5e0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #004080;
+}
+
+/* ===== Tabellen en grids ===== */
+.infotabel {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 10px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.header {
+  font-weight: bold;
+  background-color: #d3e5ff;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.label {
+  font-weight: bold;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.infotabel div {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== Foto styling ===== */
+.foto {
+  width: 100%;           /* past automatisch binnen de cel */
+  max-width: 150px;      /* voorkomt dat ze te breed worden */
+  height: auto;          /* behoudt de verhouding */
+  display: block;
+  margin: 0 auto;        /* centreren in de cel */
+  object-fit: cover;     /* vult het vlak mooi zonder vervormen */
+}
+
+/* ===== Dashboard styling ===== */
+.dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+}
+
+.dashboard-tile {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     background-color: #003366;
+     padding: 20px;
+     border-radius: 12px;
+     text-decoration: none;
+     transition: transform 0.2s ease, background-color 0.2s ease;
+   }
+
+   .dashboard-tile img {
+     width: 80px;
+     height: 80px;
+     object-fit: contain;
+     margin-bottom: 10px;
+   }
+
+.dashboard-tile span {
+     font-weight: bold;
+     color: white;
+   }
+
+.dashboard-tile:hover {
+     background-color: #fcfcfc;
+     transform: scale(1.03);
+   }
+
+  .dashboard-tile:hover span {
+    color: #001f3f;
+  }
+
+/* ===== Kaarten ===== */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* ===== Buttons ===== */
+.button {
+  margin-top: 20px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #002244;
+}
+
+/* ===== Team pagina ===== */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-member {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #001f3f;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.team-member p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #001f3f;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  max-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ffffffcc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  padding: 10px;
+  background-color: #000c1a;
+  color: #aaa;
+  font-size: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+form input,
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;       /* ruimte tussen velden */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;    /* wit veld tegen donker achtergrond */
+  color: #000;                /* zwarte tekst voor leesbaarheid */
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #054f9b;      /* kleur accent bij focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(5, 79, 155, 0.5);
+}
+
+/*locatie pagina*/
+.locatie-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.locatie-info {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/*grid layout locatie pagina*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #333;
+}
+
+.grid-item h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #054f9b;
+}
+
+/* Zorg dat de submenus standaard verborgen zijn */
+.top-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white; /* of wat past bij je stijl */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+/* Toon het submenu enkel bij hover */
+.top-nav .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Zorg dat de bovenste dropdown goed staat */
+.top-nav .dropdown {
+  position: relative;
+}
+
+/* Optioneel: stijl submenu items */
+.top-nav .dropdown-menu li {
+  white-space: nowrap;
+}
+
+/* Voeg wat extra stijl toe aan links in submenu */
+.top-nav .dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333; /* pas aan aan je thema */
+}
+
+.top-nav .dropdown-menu a:hover {
+  background-color: #f0f0f0; /* hover effect */
+}
