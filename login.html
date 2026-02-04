@@ -8,5 +8,17 @@
   </head>
   <body data-title="Staff login Teck" data-logo="/teck-staff/images/teck-logo.png">
     
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="E-mailadres" required />
+      <br><br>
+      <input type="password" id="password" placeholder="Wachtwoord" required />
+      <br><br>
+      <button type="submit">Inloggen</button>
+    </form>
+  
+    <p id="error" style="color:red;"></p>
+  
+    <!-- Login logica -->
+    <script type="module" src="/teck-staff/includes/js/login.js"></script>
   </body>
 </html>
