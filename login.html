@@ -9,10 +9,26 @@
   <body data-title="Staff login Teck" data-logo="/teck-staff/images/teck-logo.png">
     
     <form id="loginForm">
-      <input type="email" id="email" placeholder="E-mailadres" required />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="E-mailadres"
+        autocomplete="email"
+        required
+      />
       <br><br>
-      <input type="password" id="password" placeholder="Wachtwoord" required />
+    
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Wachtwoord"
+        autocomplete="current-password"
+        required
+      />
       <br><br>
+    
       <button type="submit">Inloggen</button>
     </form>
   
