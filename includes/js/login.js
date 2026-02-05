@@ -1,3 +1,5 @@
+console.log("✅ login.js geladen");
+
 import { auth } from "/teck-staff/includes/firebase/config.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
