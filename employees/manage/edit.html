@@ -9,8 +9,16 @@
   <body data-title="Beheer werknemers" data-logo="/teck-staff/images/teck-logo.png">
     <div id="header-placeholder"></div>
 
-    <a class="nav-button" href="/teck-staff/employees/manage/add.html">Weknemer toevoegen</a>
-
+    <select id="role">
+      <option value="staff">Staff</option>
+      <option value="admin">Admin</option>
+      <option value="viewer">Viewer</option>
+    </select>
+    
+    <button id="saveRole">Rol opslaan</button>
+    <p id="status"></p>
+    
+    <script type="module" src="/teck-staff/includes/js/employees-detail.js"></script>
     <script src="/teck-staff/includes/header/head.js"></script>
   </body>
 </html>
