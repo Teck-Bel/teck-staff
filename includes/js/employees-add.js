@@ -18,7 +18,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await addDoc(collection(db, "employees"), employee);
-    window.location.href = "/teck-staff/employees/manage/index.html";
+    window.location.href = "/teck-staff/employees/index.html";
   } catch (err) {
     errorEl.textContent = "Fout bij toevoegen";
     console.error(err);
