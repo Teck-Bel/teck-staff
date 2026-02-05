@@ -9,6 +9,24 @@
   <body data-title="Werknemer toevoegen" data-logo="/teck-staff/images/teck-logo.png">
     <div id="header-placeholder"></div>
 
+    <form id="addEmployeeForm">
+      <input type="email" id="email" placeholder="E-mail" required />
+    
+      <input type="text" id="voornaam" placeholder="Voornaam" required />
+      <input type="text" id="achternaam" placeholder="Achternaam" required />
+    
+      <select id="role" required>
+        <option value="staff">Staff</option>
+        <option value="admin">Admin</option>
+        <option value="viewer">Viewer</option>
+      </select>
+
+      <button type="submit">Werknemer toevoegen</button>
+    </form>
+
+    <p id="error"></p>
+
     <script src="/teck-staff/includes/header/head.js"></script>
+    <script type="module" src="/teck-staff/includes/js/employees-add.js"></script>
   </body>
 </html>
