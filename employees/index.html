@@ -9,6 +9,59 @@
   <body data-title="Werknemers" data-logo="/teck-staff/images/teck-logo.png">
     <div id="header-placeholder"></div>
 
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Voornaam</th>
+          <th>Achternaam</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Acties</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTableBody">
+        <!-- Werknemers worden hier geladen -->
+      </tbody>
+    </table>
+
+    <script type="module">
+      import { db } from "/teck-staff/includes/firebase/config.js";
+      import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    
+      const tbody = document.getElementById("employeeTableBody");
+    
+      async function loadEmployees() {
+        tbody.innerHTML = ""; // leeg maken
+        try {
+          const snap = await getDocs(collection(db, "employees"));
+    
+          snap.forEach(docSnap => {
+            const data = docSnap.data();
+            const row = document.createElement("tr");
+    
+            row.innerHTML = `
+              <td>${data.voornaam}</td>
+              <td>${data.achternaam}</td>
+              <td>${data.email}</td>
+              <td>${data.role}</td>
+              <td>
+                <a href="detail.html?id=${docSnap.id}">Bewerk</a>
+              </td>
+            `;
+    
+            tbody.appendChild(row);
+          });
+    
+        } catch (err) {
+          console.error("Fout bij laden werknemers:", err);
+          tbody.innerHTML = `<tr><td colspan="5">Kon werknemers niet laden</td></tr>`;
+        }
+      }
+    
+      // Laad meteen bij openen pagina
+      loadEmployees();
+    </script>
+
     <a class="nav-button" href="/teck-staff/employees/manage/edit.html">Werknemer Bewerken</a>
     <a class="nav-button" href="/teck-staff/employees/manage/add.html">Weknemer toevoegen</a>
 
