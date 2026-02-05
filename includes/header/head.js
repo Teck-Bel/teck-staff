@@ -10,5 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (title && titleElement) {
         titleElement.textContent = title;
       }
+
+      // Logo uit <body data-logo="...">
+      const logoSrc = document.body.dataset.logo;
+      const logoElement = document.getElementById("site-logo");
+      if (logoSrc && logoElement) {
+        logoElement.src = logoSrc;
+      }
     });
 });
