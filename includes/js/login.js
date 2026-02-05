@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
-      await singInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       window.location.href = "/teck-staff/dashboard.html";
     } catch (err) {
       errorE1.textContent = "Ongeldige inloggegevens";
